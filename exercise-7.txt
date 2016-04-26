@@ -1,0 +1,69 @@
+
+mysql> source /home/ubuntu/workspace/data/import-table-structure.sql;
+Query OK, 2 rows affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show tables;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
+| Entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from AddressBook;
+Empty set (0.00 sec)
+
+mysql> select * from Entry;
+Empty set (0.00 sec)
+
+mysql> select * from Account;
+Empty set (0.00 sec)
+
+
+mysql> source /home/ubuntu/workspace/data/import-account.sql;
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+...
+ 
+mysql> source /home/ubuntu/workspace/data/import-addressbook.sql;
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 10 rows affected (0.12 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+...
+
+mysql> source /home/ubuntu/workspace/data/import-entry.sql;
