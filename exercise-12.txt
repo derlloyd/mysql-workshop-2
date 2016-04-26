@@ -1,0 +1,58 @@
+
+SELECT accountId, COUNT(*) as count1 FROM AddressBook 
+GROUP BY accountId
+HAVING count1=(
+
+SELECT COUNT(accountId) as count2 FROM AddressBook
+GROUP BY accountId
+ORDER BY count2 DESC LIMIT 1
+);
+
+
+
+Which Account owns the most Address Books?
+
+
+mysql> SELECT accountId, COUNT(*) FROM AddressBook GROUP BY accountId ORDER BY COUNT(*) DESC LIMIT 1;
++-----------+----------+
+| accountId | COUNT(*) |
++-----------+----------+
+|         5 |       19 |
++-----------+----------+
+1 row in set (0.00 sec)
+
+*** however, what if many accounts share the max number of address books?
+
+mysql> SELECT accountId, COUNT(*) as count1 FROM AddressBook 
+    -> GROUP BY accountId
+    -> HAVING count1=(
+    -> 
+    -> SELECT COUNT(accountId) as count2 FROM AddressBook
+    -> GROUP BY accountId
+    -> ORDER BY count2 DESC LIMIT 1
+    -> );
++-----------+--------+
+| accountId | count1 |
++-----------+--------+
+|         5 |     19 |
+|        14 |     19 |
++-----------+--------+
+2 rows in set (0.00 sec)
+
+
+Which Address Book contains the most Entries?
+
+mysql> SELECT addressBookId, COUNT(*) as count1 FROM Entry 
+    -> GROUP BY addressBookId
+    -> HAVING count1=(
+    -> 
+    -> SELECT COUNT(addressBookId) as count2 FROM Entry
+    -> GROUP BY addressBookId
+    -> ORDER BY count2 DESC LIMIT 1
+    -> );
++---------------+--------+
+| addressBookId | count1 |
++---------------+--------+
+|            37 |     52 |
++---------------+--------+
+1 row in set (0.01 sec)
