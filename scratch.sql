@@ -223,6 +223,64 @@ ORDER BY count2 DESC LIMIT 1
 
 
 
+----------------------------
+
+
+How many Address Book Entries have phones starting with area code 3XX?
+
+mysql> SELECT COUNT(*) FROM Entry WHERE subtype="phone" AND contentLineOne LIKE "(3__)%";
++----------+
+| COUNT(*) |
++----------+
+|       39 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+How many Address Book Entries have home phones not containing the digit 5?
+
+mysql> SELECT COUNT(*) FROM Entry 
+    ->     WHERE type="home" AND
+    ->     subtype = "phone" AND
+    ->     contentLineOne NOT LIKE "%5%";
++----------+
+| COUNT(*) |
++----------+
+|       76 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+How many Address Book Entries are work phones starting with a country code?
+
+
+mysql> SELECT COUNT(*) FROM Entry
+    ->     WHERE type="work" AND
+    ->     subtype="phone" AND
+    ->     contentLineOne LIKE "(___)%";
++----------+
+| COUNT(*) |
++----------+
+|      120 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+SELECT COUNT(*) FROM Entry
+    WHERE type="work" AND
+    subtype="phone" AND
+    contentLineOne LIKE "(___)%";
+
 
 
 
