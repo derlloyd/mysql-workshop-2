@@ -35,3 +35,78 @@ SELECT email FROM Account WHERE id=63;
 SELECT name FROM AddressBook WHERE accountId=3;
 SELECT id, name, createdOn FROM AddressBook WHERE name="Lorem Foundation";
 
+How many Accounts exist?
+
+
+mysql> SELECT COUNT(*) AS "Number of Accounts" FROM Account;
++--------------------+
+| Number of Accounts |
++--------------------+
+|               1000 |
++--------------------+
+1 row in set (0.00 sec)
+
+
+
+How many Address Books exist?
+
+
+mysql> SELECT COUNT(*) AS "Number of Address Books" FROM AddressBook;
++-------------------------+
+| Number of Address Books |
++-------------------------+
+|                    1100 |
++-------------------------+
+1 row in set (0.01 sec)
+
+
+
+
+How many Address Book Entries exist?
+
+mysql> SELECT COUNT(*) AS "Number of Entries" FROM Entry;
++-------------------+
+| Number of Entries |
++-------------------+
+|              4000 |
++-------------------+
+1 row in set (0.00 sec)
+
+
+How many Address Book Entries are listed as born before February 12th of 1982?
+
+
+mysql> SELECT COUNT(*) FROM Entry WHERE birthday<"1982-02-12 00:00:00";   
++----------+
+| COUNT(*) |
++----------+
+|     2687 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+How many Address Book Entries are listed as born on or after January 1st of 1965?
+
+mysql> SELECT COUNT(*) FROM Entry WHERE birthday>="1965-01-01 00:00:00";
++----------+
+| COUNT(*) |
++----------+
+|     2597 |
++----------+
+1 row in set (0.01 sec)
+
+
+
+Which Address Book Entry is listed as being the oldest of age?
+
+mysql> SELECT firstName, lastName, MIN(birthday) FROM Entry;             
++-----------+----------+---------------------+
+| firstName | lastName | MIN(birthday)       |
++-----------+----------+---------------------+
+| Herrod    | Conrad   | 1945-09-02 09:21:58 |
++-----------+----------+---------------------+
+1 row in set (0.00 sec)
+
+
+
