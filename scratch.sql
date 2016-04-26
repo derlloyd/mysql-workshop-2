@@ -27,3 +27,11 @@ DROP TABLE Account;
 
 
 
+source /home/ubuntu/workspace/data/import-table-structure.sql
+
+
+SELECT email FROM Account WHERE id=63;
+
+SELECT name FROM AddressBook WHERE accountId=3;
+SELECT id, name, createdOn FROM AddressBook WHERE name="Lorem Foundation";
+

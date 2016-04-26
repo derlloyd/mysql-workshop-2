@@ -1,0 +1,41 @@
+What is the email of the Account identified by "63"?
+
+
+mysql> SELECT email AS "Email for Account 63" FROM Account WHERE id=63;   
++-------------------------------------------------+
+| Email for Account 63                            |
++-------------------------------------------------+
+| consectetuer.rhoncus.Nullam@temporloremeget.org |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
+
+
+What are the names of the AdressBooks belonging to accountId "3"?
+
+mysql> SELECT name AS "Address Books under Account ID 3" FROM AddressBook WHERE accountId=3;
++----------------------------------+
+| Address Books under Account ID 3 |
++----------------------------------+
+| Donec Incorporated               |
+| Ipsum Nunc LLC                   |
+| In Consectetuer Ltd              |
+| Lacus Aliquam Rutrum Industries  |
+| Ac Ltd                           |
+| Mauris Consulting                |
+| Ornare Corporation               |
++----------------------------------+
+7 rows in set (0.00 sec)
+
+
+
+On which date was the AddressBook titled "Lorem Foundation" created?
+
+mysql> SELECT id, name, createdOn FROM AddressBook WHERE name="Lorem Foundation";
++-----+------------------+---------------------+
+| id  | name             | createdOn           |
++-----+------------------+---------------------+
+|   5 | Lorem Foundation | 2016-06-26 02:43:41 |
+| 153 | Lorem Foundation | 2015-05-04 14:28:16 |
++-----+------------------+---------------------+
+2 rows in set (0.00 sec)
