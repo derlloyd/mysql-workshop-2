@@ -1,0 +1,8 @@
+mysql> TRUNCATE TABLE Entry;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from Entry;
+Empty set (0.00 sec)
+
+
+

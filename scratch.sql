@@ -14,3 +14,16 @@ VALUES
     (1, "John", "Smith", "1/1/2000", "home", "phone", "514-555-1212"),
     (1, "Chris", "Adams", "12/15/1980", "work", "address", "12 Pine Ave"),
     (1, "Terry", "Oreily", "5/28/1990", "work", "email", "terry@yahoo.com");
+
+
+
+
+UPDATE Account SET email="buddy@yahoo.com" WHERE id=1;
+UPDATE AddressBook SET name="yahoo addressbook" WHERE id=1;
+UPDATE Entry SET birthday="2000-01-01 12:30:00"; 
+
+TRUNCATE TABLE Entry;
+DROP TABLE Account;
+
+
+
