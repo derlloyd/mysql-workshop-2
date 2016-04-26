@@ -110,3 +110,55 @@ mysql> SELECT firstName, lastName, MIN(birthday) FROM Entry;
 
 
 
+How many Address Book Entries are not listed as other?
+
+mysql> SELECT COUNT(*) FROM Entry WHERE type!="other";
++----------+
+| COUNT(*) |
++----------+
+|     2800 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+How many Address Book Entries are listed as either home or work?
+
+mysql> SELECT COUNT(*) FROM Entry WHERE type="home" OR type="work";
++----------+
+| COUNT(*) |
++----------+
+|     2800 |
++----------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+How many Address Book Entries are listed as phones?
+
+mysql> SELECT COUNT(*) FROM Entry WHERE subtype="phone";
++----------+
+| COUNT(*) |
++----------+
+|      600 |
++----------+
+1 row in set (0.01 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
