@@ -1,0 +1,37 @@
+
+
+mysql-ctl start
+mysql -u derlloyd
+
+opened import-table-structure.sql
+removed _import replace with ""
+
+source /home/ubuntu/workspace/data/import-table-structure.sql
+
+mysql> show databases;
++-----------------------+
+| Database              |
++-----------------------+
+| information_schema    |
+| c9                    |
+| decodemtl_addressbook |
+| mysql                 |
+| performance_schema    |
+| phpmyadmin            |
++-----------------------+
+6 rows in set (0.00 sec)
+
+mysql> use decodemtl_addressbook;
+Database changed
+mysql> show tables;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
+| Entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
+
+
+

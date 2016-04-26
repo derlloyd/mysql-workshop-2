@@ -1,20 +1,20 @@
 -- -----------------------------------------------------
--- Schema decodemtl_addressbook_import
+-- Schema decodemtl_addressbook
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `decodemtl_addressbook_import` ;
+DROP SCHEMA IF EXISTS `decodemtl_addressbook` ;
 
 -- -----------------------------------------------------
--- Schema decodemtl_addressbook_import
+-- Schema decodemtl_addressbook
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `decodemtl_addressbook_import` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
-USE `decodemtl_addressbook_import` ;
+CREATE SCHEMA IF NOT EXISTS `decodemtl_addressbook` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+USE `decodemtl_addressbook` ;
 
 -- -----------------------------------------------------
--- Table `decodemtl_addressbook_import`.`Account`
+-- Table `decodemtl_addressbook`.`Account`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `decodemtl_addressbook_import`.`Account` ;
+DROP TABLE IF EXISTS `decodemtl_addressbook`.`Account` ;
 
-CREATE TABLE IF NOT EXISTS `decodemtl_addressbook_import`.`Account` (
+CREATE TABLE IF NOT EXISTS `decodemtl_addressbook`.`Account` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `email` VARCHAR(255) NOT NULL COMMENT '',
   `password` VARCHAR(40) NOT NULL COMMENT '',
@@ -24,11 +24,11 @@ CREATE TABLE IF NOT EXISTS `decodemtl_addressbook_import`.`Account` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `decodemtl_addressbook_import`.`AddressBook`
+-- Table `decodemtl_addressbook`.`AddressBook`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `decodemtl_addressbook_import`.`AddressBook` ;
+DROP TABLE IF EXISTS `decodemtl_addressbook`.`AddressBook` ;
 
-CREATE TABLE IF NOT EXISTS `decodemtl_addressbook_import`.`AddressBook` (
+CREATE TABLE IF NOT EXISTS `decodemtl_addressbook`.`AddressBook` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `accountId` INT NOT NULL COMMENT '',
   `name` VARCHAR(255) NOT NULL COMMENT '',
@@ -38,11 +38,11 @@ CREATE TABLE IF NOT EXISTS `decodemtl_addressbook_import`.`AddressBook` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `decodemtl_addressbook_import`.`Entry`
+-- Table `decodemtl_addressbook`.`Entry`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `decodemtl_addressbook_import`.`Entry` ;
+DROP TABLE IF EXISTS `decodemtl_addressbook`.`Entry` ;
 
-CREATE TABLE IF NOT EXISTS `decodemtl_addressbook_import`.`Entry` (
+CREATE TABLE IF NOT EXISTS `decodemtl_addressbook`.`Entry` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `addressBookId` INT NOT NULL COMMENT '',
   `firstName` VARCHAR(255) NOT NULL COMMENT '',
